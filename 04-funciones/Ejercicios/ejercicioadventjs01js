@@ -1,0 +1,54 @@
+/**
+ * 
+function manufacture(gifts, materials) {
+  // Code here
+  return []
+}
+Enviar solución
+Ctrl
++
+⏎
+
+SPONSOR
+KeepCoding
+Desde Cero a Profesional: Aprende Programación con KeepCoding
+Aprende en 6 meses. De novato a profesional en Python, Java y Spring Boot. Descubre tu potencial en el mundo de la tecnología.
+
+Fácil
+En el taller de Santa, los elfos tienen una lista de regalos que desean fabricar y un conjunto limitado de materiales.
+
+Los regalos son cadenas de texto y los materiales son caracteres. Tu tarea es escribir una función que, dada una lista de regalos y los materiales disponibles, devuelva una lista de los regalos que se pueden fabricar.
+
+Un regalo se puede fabricar si contamos con todos los materiales necesarios para fabricarlo.
+
+const gifts = ['tren', 'oso', 'pelota']
+const materials = 'tronesa'
+
+manufacture(gifts, materials) // ["tren", "oso"]
+// 'tren' SÍ porque sus letras están en 'tronesa'
+// 'oso' SÍ porque sus letras están en 'tronesa'
+// 'pelota' NO porque sus letras NO están en 'tronesa'
+
+const gifts = ['juego', 'puzzle']
+const materials = 'jlepuz'
+
+manufacture(gifts, materials) // ["puzzle"]
+
+const gifts = ['libro', 'ps5']
+const materials = 'psli'
+
+manufacture(gifts, materials) // []
+ */
+
+// Solución
+
+function manufacture(gifts, materials) {
+  return gifts.filter((gift) =>
+    gift.split("").every((letter) => materials.includes(letter))
+  );
+}
+
+const gifts = ["casa", "auto", "pelota"];
+const materials = "acsuto";
+
+console.log(manufacture(gifts, materials)); // ["tren", "oso"]
